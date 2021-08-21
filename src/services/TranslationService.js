@@ -55,10 +55,10 @@ const removeAllActiveTranslations = async (translations) => {
  */
 const removeTranslation = async () => {
  const userId = await getUserByName(username);
- const userIdData = await userId.json();
+ const userData = await userId.json();
 
  const getTranslations = await fetchAllActiveTranslationsById(
-  userIdData[0].id
+  userData[0].id
  );
  const translationsData = await getTranslations.json();
 
