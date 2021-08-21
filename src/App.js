@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-d
 import './App.css';
 
 import Homepage from './components/homepage/Homepage';
+
 import UserProfilePage from './components/profile/UserProfilePage'
 
 import Translation from './components/translations/Translation';
@@ -10,7 +11,7 @@ import Translation from './components/translations/Translation';
 const App = () => {
   return (
     <>
-      <h1>App</h1>
+
 
       <Router>
 
@@ -23,7 +24,6 @@ const App = () => {
           <Route path='/user-profile' component={UserProfilePage} />
 
         </Switch>
-
 
 
       </Router>

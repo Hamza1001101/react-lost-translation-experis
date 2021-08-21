@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Redirect } from "react-router-dom";
+import styled from "styled-components";
 import { getUsername } from "../../util/Storage";
 import UserInfo from "../login/UserInfo";
+import SignImage from "./singImage/SignImages";
 
 const TranslationPage = () => {
   const [translationText, setTranslationText] = useState("");
- 
+
   const [value, setValue] = useState(false);
   const [signImages, setSignImages] = useState(null);
   const BASE_URL_USERS = "http://localhost:3000/users/";
@@ -13,7 +15,7 @@ const TranslationPage = () => {
 
   const onTranslateHandle = (e) => {
     if (/[^a-zA-Z ]/.test(translationText)) {
-      return alert("text can only contain a-z and spaces");
+      return alert("Only alphabet and spaces");
     }
 
     fetch(BASE_URL_USERS + "/?username=" + username, {
@@ -55,31 +57,95 @@ const TranslationPage = () => {
   };
 
   return (
-    <div>
+    <PageContainer>
       {!username && <Redirect to="/homepage" />}
       <UserInfo username={username} />
-      <h1>Translation Page here....</h1>
-      <input
-        type="text"
-        name="translation"
-        id="translation"
-        placeholder="Write here...."
-        onChange={onChangeHandle}
-      />
-      <button onClick={onTranslateHandle}>Translate</button>
-      {value === true && (
-        <>
-          {signImages &&
-            signImages.map((e, i) => {
-              if (e !== "../media/signs/ .png") {
-                return <img src={e} alt={e} key={i} />;
-              }
-              return <div key={i}></div>;
-            })}
-        </>
-      )}
-    </div>
+      <TranslationWrapper>
+        <Content>
+          <H1>Translate here....</H1>
+          <Input
+            type="text"
+            name="translation"
+            id="translation"
+            placeholder="Write here...."
+            onChange={onChangeHandle}
+          />
+          <TranslateBtn onClick={onTranslateHandle}>Translate</TranslateBtn>
+        </Content>
+
+        {value === true && (
+          <>
+            <SigsnWrapper>
+              {signImages &&
+                signImages.map((src, id) => {
+                  if (src !== "../sign-images/ .png") {
+                    return <SignImage key={id} src={src} />;
+                  }
+                  return <div key={id}></div>;
+                })}
+            </SigsnWrapper>
+          </>
+        )}
+      </TranslationWrapper>
+    </PageContainer>
   );
 };
 
+const PageContainer = styled.section`
+  display: grid;
+  grid-gap: 1rem;
+  height: 70vh;
+  place-items: center;
+`;
+
+const TranslationWrapper = styled.article`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30vh;
+  margin-bottom: 3rem;
+`;
+const Input = styled.input`
+  width: 30rem;
+  padding: 15px;
+  outline: none;
+  :hover {
+    background: #f9f5ff;
+  }
+`;
+const TranslateBtn = styled.button`
+  padding: 17px;
+  width: 17rem;
+  align-self: center;
+  font-size: 15px;
+  background: #14248a;
+  color: #fff;
+  letter-spacing: 1.3px;
+
+  :hover {
+    background: #fff;
+    color: #14248a;
+    border: 3px solid #14248a;
+    font-weight: bold;
+    box-shadow: 5px 5px 15px -1px #000000;
+  }
+`;
+
+const SigsnWrapper = styled.div`
+  box-shadow: 5px 5px 10px -3px #000000;
+  border-radius: 4px;
+  text-align: center;
+`;
+const H1 = styled.h1`
+  font-size: 2.5rem;
+`;
 export default TranslationPage;

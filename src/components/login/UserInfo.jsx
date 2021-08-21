@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FaUserSecret } from "react-icons/fa";
+import styled from "styled-components";
 import { clearUsername } from "../../util/Storage";
 
 const UserInfo = ({ username }) => {
@@ -13,21 +15,34 @@ const UserInfo = ({ username }) => {
     <div>
       {username && (
         <>
-          <h1>User info</h1>
-          <div>
-            <p> {username} </p>
-            <img src="#" alt="user-pic" />
-          </div>
-          <div>
-            <a href="/user-profile"> Go Profile </a>
-            <a onClick={onLogoutHandler} href="/homepage">
-              Logout
-            </a>
-          </div>
+          <ProfileWrapper>
+            <A href="/user-profile">
+              {" "}
+              {username} <FaUserSecret />
+            </A>
+
+            <A href="/user-profile"> Go Profile </A>
+            <A onClick={onLogoutHandler} href="/homepage">
+              Log Out
+            </A>
+          </ProfileWrapper>
         </>
       )}
     </div>
   );
 };
 
+const ProfileWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 40rem;
+  padding-right: 1rem;
+  height: 5vh;
+  font-size: 18px;
+`;
+const A = styled.a`
+  color: #14248a;
+  font-size: 2rem;
+  letter-spacing: 1.3px;
+`;
 export default UserInfo;
