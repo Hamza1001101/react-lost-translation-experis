@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { getUsername } from "../../util/Storage";
+import UserInfo from "../login/UserInfo";
 
 const TranslationPage = () => {
   const [translationText, setTranslationText] = useState("");
@@ -59,6 +60,7 @@ const TranslationPage = () => {
   return (
     <div>
       {!username && <Redirect to="/homepage" />}
+      <UserInfo username={username} />
       <h1>Translation Page here....</h1>
       <input
         type="text"

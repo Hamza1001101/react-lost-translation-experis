@@ -5,7 +5,7 @@ import Homepage from './components/homepage/Homepage';
 import UserProfilePage from './components/profile/UserProfilePage'
 
 import Translation from './components/translations/Translation';
-import Header from './components/header/Header'
+
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
       <h1>App</h1>
 
       <Router>
-        <Header />
+
         <Switch>
           <Route exact path='/'>
             <Redirect to='/homepage' />

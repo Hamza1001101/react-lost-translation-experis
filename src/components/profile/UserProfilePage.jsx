@@ -43,7 +43,7 @@ const UserProfilePage = () => {
     }
   }, []);
 
-  const deleteTranslation = async () => {
+  const removeAllTranslations = async () => {
     await TranslationService.removeTranslation(translations);
     setTranslations(null);
   };
@@ -51,10 +51,13 @@ const UserProfilePage = () => {
   return (
     <div>
       {!username && <Redirect to="/homepage" />}
+
       <div>
         <h2>Your last translations</h2>
         <div>
-          <button onClick={deleteTranslation}>Delete all translations</button>
+          <button onClick={removeAllTranslations}>
+            Delete all translations
+          </button>
         </div>
         <div>
           {translations &&
