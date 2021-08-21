@@ -9,33 +9,20 @@ const Login = () => {
   const BASE_URL_USERS = "http://localhost:3000/users";
 
   const getCurrentUser = getUsername();
-  /**
-   * Checks if user is already logged in, the user gets re-directed to the translation page
-   */
+  
   useEffect(() => {
     if (getCurrentUser) {
       history.push("/translate");
     }
   });
 
-  /**
-   * Tries to log in user, sets the user to logged in and re-directs the user to the translation page
-   */
-  const handleLogInBtn = () => {
-    //localStorage.clear();
-    //localStorage.setItem("username", username);
+  const onLoginHandler = () => {
     setUsername(username);
-    postUser({ username: username });
+    addUser({ username });
     history.push("/translate");
   };
 
-  /**
-   * Checks if the user exists in the database, if the user doesn't exist, t
-   * the user is added to the database
-   */
-  const postUser = (user) => {
-    //const url = "https://polar-fortress-35611.herokuapp.com/users/";
-    //const url = "http://localhost:3000/users";
+  const addUser = (user) => {
     fetch(BASE_URL_USERS + "?username=" + username, {
       method: "GET",
       headers: {
@@ -60,11 +47,7 @@ const Login = () => {
       });
   };
 
-  /**
-   * Sets the username to the value of the username input
-   * @param {e} e, event of input change
-   */
-  const handleUsernameChange = (e) => {
+  const onUsernameChangeHandler = (e) => {
     setUser(e.target.value);
   };
 
@@ -75,9 +58,9 @@ const Login = () => {
         <input
           type="text"
           placeholder="username"
-          onChange={handleUsernameChange}
+          onChange={onUsernameChangeHandler}
         />
-        <button onClick={handleLogInBtn}>Login</button>
+        <button onClick={onLoginHandler}>Login</button>
       </div>
     </div>
   );

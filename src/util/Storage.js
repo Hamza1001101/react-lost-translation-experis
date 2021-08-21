@@ -16,7 +16,7 @@ export const clearUsername = () => {
  localStorage.removeItem("username");
 };
 
-export const addHistory = (value) => {
+/* export const addHistory = (value) => {
  const history = getHistory();
 
  if (history.length >= 10) {
@@ -39,4 +39,4 @@ export const getHistory = () => {
 
 export const clearHistory = () => {
  localStorage.removeItem("history");
-};
+}; */
