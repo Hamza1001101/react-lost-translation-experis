@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 const UserProfilePage = () => {
   const [translations, setTranslations] = useState(null);
   const BASE_URL_USERS = "http://localhost:3000/users/";
-  const BASE_URL_SEARCHES = "http://localhost:3000/searches/";
+  const BASE_URL_SEARCHES = "http://localhost:3000/keywords/";
   const username = getUsername();
 
   useEffect(() => {

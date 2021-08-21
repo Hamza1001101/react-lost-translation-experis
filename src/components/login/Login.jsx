@@ -23,6 +23,7 @@ const Login = () => {
   };
 
   const addUser = (user) => {
+    if (username === "") return;
     fetch(BASE_URL_USERS + "?username=" + username, {
       method: "GET",
       headers: {
@@ -31,7 +32,6 @@ const Login = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        //user doesn't exist, add to database
         if (data.length === 0) {
           fetch(BASE_URL_USERS, {
             method: "POST",

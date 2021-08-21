@@ -26,7 +26,7 @@ const TranslationPage = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          fetch(BASE_URL_USERS + data[0].id + "/searches", {
+          fetch(BASE_URL_USERS + data[0].id + "/keywords", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

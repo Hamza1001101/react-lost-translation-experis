@@ -20,35 +20,15 @@
       "id": 9
     },
     {
-      "username": "nincusub",
+      "username": "Sewam",
       "id": 10
     },
     {
-      "username": "Hamza1",
+      "username": "waalanc",
       "id": 11
-    },
-    {
-      "username": "hamza1",
-      "id": 12
-    },
-    {
-      "username": "warsame",
-      "id": 13
-    },
-    {
-      "username": "hamza",
-      "id": 14
-    },
-    {
-      "username": "Seans",
-      "id": 15
-    },
-    {
-      "username": "Sean1",
-      "id": 16
     }
   ],
-  "searches": [
+  "keywords": [
     {
       "text": "hello",
       "userId": "1",
@@ -2476,6 +2456,78 @@
       "status": "deleted",
       "userId": "16",
       "id": 414
+    },
+    {
+      "text": "fdfas",
+      "status": "deleted",
+      "userId": "9",
+      "id": 415
+    },
+    {
+      "text": "fda fdfafd fdfa",
+      "status": "deleted",
+      "userId": "9",
+      "id": 416
+    },
+    {
+      "text": "dfs fdsaf",
+      "status": "deleted",
+      "userId": "9",
+      "id": 417
+    },
+    {
+      "text": "dfsa",
+      "status": "deleted",
+      "userId": "10",
+      "id": 418
+    },
+    {
+      "text": "fdsf fdfaf",
+      "status": "deleted",
+      "userId": "10",
+      "id": 419
+    },
+    {
+      "text": "fda",
+      "status": "deleted",
+      "userId": "1",
+      "id": 420
+    },
+    {
+      "text": "dfa dfasfa",
+      "status": "deleted",
+      "userId": "1",
+      "id": 421
+    },
+    {
+      "text": "fdsaf fdsfas",
+      "status": "deleted",
+      "userId": "1",
+      "id": 422
+    },
+    {
+      "text": "fafdaf",
+      "status": "deleted",
+      "userId": "1",
+      "id": 423
+    },
+    {
+      "text": "fdasf dfafda",
+      "status": "deleted",
+      "userId": "1",
+      "id": 424
+    },
+    {
+      "text": "dsaf fdsafa",
+      "status": "deleted",
+      "userId": "1",
+      "id": 425
+    },
+    {
+      "text": "fdfa",
+      "status": "deleted",
+      "userId": "1",
+      "id": 426
     }
   ]
 }
