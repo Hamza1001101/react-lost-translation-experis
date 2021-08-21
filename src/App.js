@@ -7,7 +7,10 @@ import UserProfilePage from './components/profile/UserProfilePage'
 
 import Translation from './components/translations/Translation';
 
-
+/**
+ * The applications starts here...
+ * @returns
+ */
 const App = () => {
   return (
     <>

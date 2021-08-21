@@ -1,7 +1,16 @@
+/**
+ * Set username and save in localstorage.
+ * @param {*} value
+ */
+
 export const setUsername = (value) => {
  localStorage.setItem("username", JSON.stringify(value));
 };
 
+/**
+ * Get username from the localstorage
+ * @returns
+ */
 export const getUsername = () => {
  const storedValue = localStorage.getItem("username");
 
@@ -12,31 +21,10 @@ export const getUsername = () => {
  return false;
 };
 
+/**
+ * Clear username from the localstroge
+ */
 export const clearUsername = () => {
  localStorage.removeItem("username");
 };
 
-/* export const addHistory = (value) => {
- const history = getHistory();
-
- if (history.length >= 10) {
-  history.shift();
- }
- history.push(value);
-
- localStorage.setItem("history", JSON.stringify(history));
-};
-
-export const getHistory = () => {
- const storedValue = localStorage.getItem("history");
-
- if (storedValue) {
-  return JSON.parse(storedValue);
- }
-
- return [];
-};
-
-export const clearHistory = () => {
- localStorage.removeItem("history");
-}; */

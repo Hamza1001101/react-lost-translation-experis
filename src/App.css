@@ -1,5 +1,5 @@
 
-/******* General styling ********/
+/******* General default styling ********/
 *, ::after, ::before {
  box-sizing: border-box;
 }

@@ -4,8 +4,12 @@ const BASE_URL_USERS = "http://localhost:3000/users/";
 const BASE_URL_SEARCHES = "http://localhost:3000/keywords/";
 const username = getUsername();
 
-
-const getUserByUsername = async (name) =>
+/**
+ * Retrieves the user's id
+ * @param {*} name 
+ * @returns user's id
+ */
+const getUserByName = async (name) =>
  await fetch(BASE_URL_USERS + "?username=" + name, {
   method: "GET",
   headers: {
@@ -14,6 +18,11 @@ const getUserByUsername = async (name) =>
  });
 
 
+/**
+ * Retrieves all translations that are active for the logged in user
+ * @param {*} userId
+ * @returns Actice translations for the current user
+ */
 const fetchAllActiveTranslationsById = async (userId) =>
  await fetch(BASE_URL_SEARCHES + "?status=active&userId=" + userId, {
   method: "GET",
@@ -23,6 +32,10 @@ const fetchAllActiveTranslationsById = async (userId) =>
  });
 
 
+/**
+ * Loop thru all translations and changes their status to 'deleted'
+ * @param {*} translations
+ */
 const removeAllActiveTranslations = async (translations) => {
  for (let i = 0; i < translations.length; i++) {
   await fetch((BASE_URL_SEARCHES + translations[i].id), {
@@ -37,8 +50,11 @@ const removeAllActiveTranslations = async (translations) => {
 
 
 
+/**
+ * Removes all translations for the logged in user
+ */
 const removeTranslation = async () => {
- const userId = await getUserByUsername(username);
+ const userId = await getUserByName(username);
  const userIdData = await userId.json();
 
  const getTranslations = await fetchAllActiveTranslationsById(

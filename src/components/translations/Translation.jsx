@@ -13,6 +13,12 @@ const TranslationPage = () => {
   const BASE_URL_USERS = "http://localhost:3000/users/";
   const username = getUsername();
 
+  /**
+   * * This function runs when translate btn cliked.
+   * When the requirements are met, the translation text is added to the translation resource
+   * @param {*} e
+   * @returns
+   */
   const onTranslateHandle = (e) => {
     if (/[^a-zA-Z ]/.test(translationText)) {
       return alert("Only alphabet and spaces");
@@ -46,14 +52,22 @@ const TranslationPage = () => {
     getTranslation();
   };
 
-  const onChangeHandle = (e) => {
-    setTranslationText(e.target.value);
-  };
+  /**
+   * The images array is updated with the translation text
+   */
 
   const getTranslation = () => {
     setSignImages(
       translationText.split("").map((imgs) => `../sign-images/${imgs}.png`)
     );
+  };
+
+  /**
+   * This function gets excuted when input is changed. (The translation box)
+   * @param {*} e
+   */
+  const onChangeHandle = (e) => {
+    setTranslationText(e.target.value);
   };
 
   return (

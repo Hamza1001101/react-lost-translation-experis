@@ -2,7 +2,14 @@ import { useState } from "react";
 import { FaUserSecret } from "react-icons/fa";
 import styled from "styled-components";
 import { clearUsername } from "../../util/Storage";
-
+ 
+/**
+ * This component is responsible for the current logged in user's info
+ * It renders a logout button. When the button isClicked the local storage
+ * gets cleared and the current user gets redirected to the homepage
+ * @param {*} param0 
+ * @returns 
+ */
 const UserInfo = ({ username }) => {
   const [value, setValue] = useState(false);
 

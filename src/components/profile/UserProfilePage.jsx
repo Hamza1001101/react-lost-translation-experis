@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
 import TranslationService from "../../services/TranslationService";
 import { getUsername } from "../../util/Storage";
+import { FiArrowRight } from "react-icons/fi";
 import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 import UserTranslations from "../login/UserTranslations";
 
 const UserProfilePage = () => {
   const [translations, setTranslations] = useState(null);
+  const [isDeleted, setIsDeleted] = useState(false);
   const BASE_URL_USERS = "http://localhost:3000/users/";
   const BASE_URL_SEARCHES = "http://localhost:3000/keywords/";
   const username = getUsername();
 
+  /**
+   * Gets the logged in user's 10 most recent translations
+   */
   useEffect(() => {
     if (username) {
       fetch(BASE_URL_USERS + "?username=" + username, {
@@ -45,9 +50,13 @@ const UserProfilePage = () => {
     }
   }, []);
 
+  /**
+   * Remove all translations
+   */
   const removeAllTranslations = async () => {
     await TranslationService.removeTranslation(translations);
     setTranslations(null);
+    setIsDeleted(true);
   };
 
   return (
@@ -56,12 +65,24 @@ const UserProfilePage = () => {
 
       <Wrapper>
         <div>
-          <h1>Your last 10 translations</h1>
-          {translations && (
-            <UserTranslations
-              translations={translations}
-              removeAllTranslations={removeAllTranslations}
-            />
+          {!isDeleted ? (
+            <>
+              {translations && (
+                <>
+                  <UserTranslations
+                    translations={translations}
+                    removeAllTranslations={removeAllTranslations}
+                  />
+                </>
+              )}
+            </>
+          ) : (
+            <>
+              <h1>You just deleted all your translations 😱 </h1>
+              <A href="/translate">
+                Go and Translate stuff <FiArrowRight />
+              </A>
+            </>
           )}
         </div>
       </Wrapper>
@@ -77,5 +98,7 @@ const Wrapper = styled.section`
   place-items: center;
 `;
 
-
+const A = styled.a`
+  font-size: 2.5rem;
+`;
 export default UserProfilePage;

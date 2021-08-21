@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+
+/**
+ * Takes two props and displays all the translations and deletes them when clicked
+ * @param {*} param
+ * @returns 
+ */
 const UserTranslations = ({ translations, removeAllTranslations }) => {
   const displayTranslations = translations.map((t, id) => {
     return (
@@ -8,8 +14,10 @@ const UserTranslations = ({ translations, removeAllTranslations }) => {
       </ol>
     );
   });
+
   return (
     <ListWrapper>
+      <h1>Your last {translations.length} translations</h1>
       {displayTranslations}
       <DeleteBtn onClick={removeAllTranslations}>Clear Translations</DeleteBtn>
     </ListWrapper>

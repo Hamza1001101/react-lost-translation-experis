@@ -11,18 +11,20 @@ const Login = () => {
 
   const getCurrentUser = getUsername();
 
+  /**
+   * Redirects logged-in users to the translation page if they are already logged in
+   */
   useEffect(() => {
     if (getCurrentUser) {
       history.push("/translate");
     }
   });
 
-  const onLoginHandler = () => {
-    setUsername(username);
-    addUser({ username });
-    history.push("/translate");
-  };
-
+  /**
+   * It checks to see if the user exists in the database, if not, it adds the user
+   * @param {*} user
+   * @returns
+   */
   const addUser = (user) => {
     if (username === "") return;
     fetch(BASE_URL_USERS + "?username=" + username, {
@@ -46,6 +48,15 @@ const Login = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
+  };
+
+  /**
+   * sets the user to logged in and re-directs the user to the translation page
+   */
+  const onLoginHandler = () => {
+    setUsername(username);
+    addUser({ username });
+    history.push("/translate");
   };
 
   const onUsernameChangeHandler = (e) => {
