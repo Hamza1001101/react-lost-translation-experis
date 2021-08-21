@@ -10,7 +10,8 @@ const TranslationPage = () => {
 
   const [value, setValue] = useState(false);
   const [signImages, setSignImages] = useState(null);
-  const BASE_URL_USERS = "http://localhost:3000/users/";
+  const BASE_URL_USERS =
+    "https://lost-in-translations-experis.herokuapp.com/users/"; //"http://localhost:3000/users/";
   const username = getUsername();
 
   /**
@@ -103,7 +104,7 @@ const TranslationPage = () => {
       </TranslationWrapper>
     </PageContainer>
   );
-};
+};;
 
 const PageContainer = styled.section`
   display: grid;
