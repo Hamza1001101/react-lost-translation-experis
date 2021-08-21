@@ -5,7 +5,7 @@ const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults({
  noCors: true
 })
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 4000
 
 server.use(middlewares)
 server.use(router)
