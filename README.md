@@ -8,9 +8,9 @@ An online sign language translator as a Single Page Application using the React 
 
 This application is using:
 
-- ReactJS
-- Styled-Components 💅
+- ReactJS 
 - React-router-dom
+- Styled-Components 💅
 
 To run the application visit the Heroku URL: [https://language-translator-experis.herokuapp.com/](https://language-translator-experis.herokuapp.com/)
 
@@ -19,6 +19,6 @@ To run the application visit the Heroku URL: [https://language-translator-experi
 <!--![Trivia Game Screenshot](screenshot.png "Trivia Game Screenshot") -->
 
 ## Team
-Marcus Cvjeticanin - [@mjovanc](https://github.com/mjovanc)
-\
 Hamza Farah - [@HamzaHayd](https://github.com/Hamza1001101)
+\
+Marcus Cvjeticanin - [@mjovanc](https://github.com/mjovanc)
