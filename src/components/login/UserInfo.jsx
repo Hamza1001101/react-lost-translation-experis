@@ -24,7 +24,6 @@ const UserInfo = ({ username }) => {
         <>
           <ProfileWrapper>
             <A href="/user-profile">
-              {" "}
               {username} <FaUserSecret />
             </A>
 

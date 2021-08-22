@@ -3,30 +3,31 @@
     {
       "id": 1,
       "username": "Hamza",
-      "searches": []
+      "translations": []
     },
     {
       "username": "Marcus",
-      "searches": [],
+      "translations": [],
       "id": 2
     },
     {
       "username": "Sean",
+      "translations": [],
       "id": 3
     }
   ],
   "keywords": [
     {
-      "text": "fdsf dsfsafdsf fdfa",
-      "status": "deleted",
+      "id": 1,
       "userId": "1",
-      "id": 630
+      "status": "active",
+      "text": "somalililand"
     },
     {
-      "text": "fdsf dsfsafdsf fdfa",
-      "status": "deleted",
+      "id": 1,
       "userId": "1",
-      "id": 631
+      "status": "active",
+      "text": "somalililand"
     }
   ]
 }
