@@ -21,36 +21,35 @@ const TranslationPage = () => {
    * @returns
    */
   const onTranslateHandle = (e) => {
-    if (/[^a-zA-Z ]/.test(translationText)) {
+    if (!/[^a-zA-Z ]/.test(translationText)) {
+      fetch(`${BASE_URL_USERS}/?username=${username}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          fetch(`${BASE_URL_USERS}${data[0].id}/keywords`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              text: translationText,
+              status: "active",
+              userId: data[0].id,
+            }),
+          });
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+      setValue(true);
+      getTranslation();
+    } else {
       return alert("Only alphabet and spaces");
     }
-
-    fetch(`${BASE_URL_USERS}/?username=${username}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        fetch(`${BASE_URL_USERS}${data[0].id}/keywords`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            text: translationText,
-            status: "active",
-            userId: data[0].id,
-          }),
-        });
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-
-    setValue(true);
-    getTranslation();
   };
 
   /**
@@ -96,7 +95,7 @@ const TranslationPage = () => {
                   if (src !== "../sign-images/ .png") {
                     return <SignImage key={id} src={src} />;
                   }
-                  return <div key={id}></div>;
+                  return <div key={id} />;
                 })}
             </SigsnWrapper>
           </>
