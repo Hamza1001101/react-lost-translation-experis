@@ -20,7 +20,7 @@ const UserProfilePage = () => {
    */
   useEffect(() => {
     if (username) {
-      fetch(BASE_URL_USERS + "?username=" + username, {
+      fetch(`${BASE_URL_USERS}?username=${username}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

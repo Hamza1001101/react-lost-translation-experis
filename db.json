@@ -2,17 +2,16 @@
   "users": [
     {
       "id": 1,
-      "username": "Hamza",
-      "translations": []
+      "username": "Hamza"
     },
     {
       "username": "Marcus",
-      "translations": [],
+
       "id": 2
     },
     {
       "username": "Sean",
-      "translations": [],
+
       "id": 3
     }
   ],

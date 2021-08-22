@@ -28,7 +28,7 @@ const Login = () => {
    */
   const addUser = (user) => {
     if (username === "") return;
-    fetch(BASE_URL_USERS + "?username=" + username, {
+    fetch(`${BASE_URL_USERS}?username=${username}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

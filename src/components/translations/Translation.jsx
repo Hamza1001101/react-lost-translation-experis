@@ -25,7 +25,7 @@ const TranslationPage = () => {
       return alert("Only alphabet and spaces");
     }
 
-    fetch(BASE_URL_USERS + "/?username=" + username, {
+    fetch(`${BASE_URL_USERS}/?username=${username}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const TranslationPage = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        fetch(BASE_URL_USERS + data[0].id + "/keywords", {
+        fetch(`${BASE_URL_USERS}${data[0].id}/keywords`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

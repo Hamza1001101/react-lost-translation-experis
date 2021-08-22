@@ -4,14 +4,13 @@ import styled from "styled-components";
 import { getUsername } from "../../util/Storage";
 import Login from "../login/Login";
 
-
 const Homepage = () => {
   const currentUser = getUsername();
- const history = useHistory();
- 
- /**
-  * If There's logged in user already it redirects to the translation page. 
-  */
+  const history = useHistory();
+
+  /**
+   * If There's logged in user already it redirects to the translation page.
+   */
   useEffect(() => {
     if (currentUser) {
       history.push("/translate");
