@@ -26,31 +26,33 @@ const Login = () => {
    * @param {*} user
    * @returns
    */
+
   const addUser = (user) => {
     if (username === "") return;
-    fetch(`${BASE_URL_USERS}?username=${username}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.length === 0) {
-          fetch(BASE_URL_USERS, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(user),
-          });
-        }
+    try {
+      fetch(`${BASE_URL_USERS}?username=${username}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.length === 0) {
+            fetch(BASE_URL_USERS, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(user),
+            });
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    } catch (e) {}
   };
-
   /**
    * sets the user to logged in and re-directs the user to the translation page
    */
