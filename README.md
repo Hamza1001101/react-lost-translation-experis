@@ -12,7 +12,7 @@ This application is using:
 - React-router-dom
 - Styled-Components 💅
 
-To run the application visit the Heroku URL: [https://language-translator-experis.herokuapp.com/](https://language-translator-experis.herokuapp.com/)
+To run the application visit the Heroku URL: [https://lost-in-translations-experis.herokuapp.com/](https://language-translator-experis.herokuapp.com/). This where the JSON-DB lives.
 
 ## Screenshot
 
