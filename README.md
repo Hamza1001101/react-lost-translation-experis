@@ -2,7 +2,7 @@
 
 ## About
 
-An online sign language translator as a Single Page Application using the React framework. 
+An online sign language translator as a Single Page Application using the React framework. ✌🏿🤞🏽 🤟 👌
 
 ## Technologies
 
