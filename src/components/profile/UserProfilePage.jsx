@@ -12,7 +12,7 @@ const UserProfilePage = () => {
   const BASE_URL_USERS =
     "https://lost-in-translations-experis.herokuapp.com/users/"; //"http://localhost:3000/users/";
   const BASE_URL_SEARCHES =
-    "https://lost-in-translations-experis.herokuapp.com/keywords"; //"http://localhost:3000/keywords/";
+    "https://lost-in-translations-experis.herokuapp.com/keywords/"; //"http://localhost:3000/keywords/";
   const username = getUsername();
 
   /**
@@ -90,7 +90,7 @@ const UserProfilePage = () => {
       </Wrapper>
     </>
   );
-};;
+};;;
 
 const Wrapper = styled.section`
   display: grid;
