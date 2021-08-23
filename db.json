@@ -18,13 +18,13 @@
       "id": 1,
       "userId": "1",
       "status": "active",
-      "text": "somalililand"
+      "text": "europe"
     },
     {
       "id": 1,
-      "userId": "1",
+      "userId": "2",
       "status": "active",
-      "text": "somalililand"
+      "text": "usa"
     }
   ]
 }
