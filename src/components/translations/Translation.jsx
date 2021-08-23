@@ -103,7 +103,7 @@ const TranslationPage = () => {
       </TranslationWrapper>
     </PageContainer>
   );
-};;
+};
 
 const PageContainer = styled.section`
   display: grid;
@@ -144,7 +144,7 @@ const TranslateBtn = styled.button`
   background: #14248a;
   color: #fff;
   letter-spacing: 1.3px;
-
+  margin: 1.5rem 0;
   :hover {
     background: #fff;
     color: #14248a;
