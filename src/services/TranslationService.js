@@ -4,8 +4,7 @@ import { getUsername } from "../util/Storage";
 //const BASE_URL_SEARCHES = "http:/ / localhost: 3000 / keywords / ";
 const BASE_URL_USERS =
   "https://lost-in-translations-experis.herokuapp.com/users/"; //"http://localhost:3000/users/";
-const BASE_URL_SEARCHES =
-  "https://lost-in-translations-experis.herokuapp.com/keywords/"; //"http://localhost:3000/keywords/";
+const BASE_URL_SEARCHES = "https://db-json-database.herokuapp.com/keywords/"; //"http://localhost:3000/keywords/";
 const username = getUsername();
 
 /**
