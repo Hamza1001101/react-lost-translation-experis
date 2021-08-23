@@ -10,8 +10,7 @@ const TranslationPage = () => {
 
   const [value, setValue] = useState(false);
   const [signImages, setSignImages] = useState(null);
-  const BASE_URL_USERS =
-    "https://lost-in-translations-experis.herokuapp.com/users/"; //"http://localhost:3000/users/";
+  const BASE_URL_USERS = "https://db-json-database.herokuapp.com/users/";
   const username = getUsername();
 
   /**

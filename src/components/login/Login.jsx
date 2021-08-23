@@ -7,9 +7,8 @@ import { setUsername, getUsername } from "../../util/Storage";
 const Login = () => {
   const history = useHistory();
   const [username, setUser] = useState("");
-  //const BASE_URL_USERS = "http://localhost:3000/users";
-  const BASE_URL_USERS =
-    "https://lost-in-translations-experis.herokuapp.com/users/";
+
+  const BASE_URL_USERS = "https://db-json-database.herokuapp.com/users";
   const getCurrentUser = getUsername();
 
   /**
