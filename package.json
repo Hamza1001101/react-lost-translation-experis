@@ -22,7 +22,9 @@
     "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+      "requirements-check": "babel-node check-version.js",
+    "postinstall": "npm run requirements-check"
   },
   "eslintConfig": {
     "extends": [
@@ -41,5 +43,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },{
+  "name": "my package",
+  "engines": {
+    "node": "14.17.4" 
   }
+
+}
+  
 }
