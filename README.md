@@ -14,7 +14,7 @@ This application is using:
 
 ## Database
 
-The Database of the applicatoin can be accessed here: [https://lost-in-translations-experis.herokuapp.com](https://lost-in-translations-experis.herokuapp.com). 
+The Database of the applicatoin can be accessed here: [https://lost-in-translations-experis.herokuapp.com](https://db-json-database.herokuapp.com/). 
 
 ## Screenshot
 
